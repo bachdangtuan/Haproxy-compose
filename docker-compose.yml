@@ -10,9 +10,4 @@ services:
       - ./logfile/logs:/var/log/haproxy:rw
     ports:
       - 80:80
-    networks:
-      - haproxy_network
-
-networks:
-  haproxy_network:
-    driver: bridge
+      - 443:443
