@@ -7,6 +7,7 @@ services:
     restart: always
     volumes:
       - ./config/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - ./cert:/usr/local/etc/haproxy/certs/
       - ./logfile/logs:/var/log/haproxy:rw
     ports:
       - 80:80
