@@ -4,6 +4,7 @@ services:
   haproxy:
     image: haproxy:latest
     container_name: haproxy_isofh
+    # user: "root" # Toàn quyền sử dụng expose port 
     restart: always
     volumes:
       - ./config/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
@@ -12,5 +13,6 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 9000:9000
-      
+#    network_mode: host  #  Trong trường hợp sử dụng mạng bride mà sử dụng chính mạng của host
+#     expose:
+#       - 8080
